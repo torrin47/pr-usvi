@@ -1,0 +1,152 @@
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color: white;
+	overflow: hidden;
+	font-family: "Kimberley", sans-serif
+}
+#header {
+	height: 85px;
+	overflow: hidden;
+}
+#footer {
+	padding: 2px;
+	background-color: #e1ebf4;
+	color: #2a3537;
+	font-size: 8pt;
+	text-align: center;
+	height: 28px;
+	margin: 0 0 0 148px;
+}
+#rightPane {
+	margin: 1px;
+	padding: 3px;
+	background-color: white;
+	color: #421b14;
+	border: solid 1px;
+	width: 23%;
+	overflow: auto;
+}
+#leftPane {
+	color: white;
+	padding: 5px;
+	width: 137px;
+}
+#map {
+	margin: 1px;
+	border: solid 1px;
+}
+.nihilo .dijitAccordionText {
+	margin-left: 4px;
+	margin-right: 4px;
+	color: #5c8503;
+}
+.nihilo .dijitButtonNode {
+	background: transparent;
+	border: 0 none;
+}
+.zoominIcon {
+	background-image: url(images/nav_zoomin.png);
+	width: 16px;
+	height: 16px;
+}
+.zoomoutIcon {
+	background-image: url(images/nav_zoomout.png);
+	width: 16px;
+	height: 16px;
+}
+.zoomfullextIcon {
+	background-image: url(images/nav_fullextent.png);
+	width: 16px;
+	height: 16px;
+}
+.zoomprevIcon {
+	background-image: url(images/nav_previous.png);
+	width: 16px;
+	height: 16px;
+}
+.zoomnextIcon {
+	background-image: url(images/nav_next.png);
+	width: 16px;
+	height: 16px;
+}
+.panIcon {
+	background-image: url(images/nav_pan.png);
+	width: 16px;
+	height: 16px;
+}
+.deactivateIcon {
+	background-image: url(images/nav_decline.png);
+	width: 16px;
+	height: 16px;
+}
+.measureIcon {
+	background-image: url(images/Measure_Distance16.png);
+	width: 16px;
+	height: 16px;
+}
+.chartIcon {
+	background-image: url(images/chartIcon.gif);
+	width: 16px;
+	height: 16px;
+}
+.chartIconOn {
+	background-image: url(images/chartIconOn.gif);
+	width: 16px;
+	height: 16px;
+}
+.panNW {
+	background-image: url(images/pan_nw.gif);
+	width: 16px;
+	height: 16px;
+}
+.panNorth {
+	background-image: url(images/pan_north.gif);
+	width: 16px;
+	height: 16px;
+}
+.panNE {
+	background-image: url(images/pan_ne.gif);
+	width: 16px;
+	height: 16px;
+}
+.panWest {
+	background-image: url(images/pan_west.gif);
+	width: 16px;
+	height: 16px;
+}
+.panEast {
+	background-image: url(images/pan_east.gif);
+	width: 16px;
+	height: 16px;
+}
+.panSW {
+	background-image: url(images/pan_sw.gif);
+	width: 16px;
+	height: 16px;
+}
+.panSouth {
+	background-image: url(images/pan_south.gif);
+	width: 16px;
+	height: 16px;
+}
+.panSE {
+	background-image: url(images/pan_se.gif);
+	width: 16px;
+	height: 16px;
+}
+#measureWindow {
+	position: absolute;
+	border: solid 1px;
+	padding: 4px;
+	right: 35px;
+	top: 5px;
+	z-index: 998;
+	width: 220px;
+	text-align: center;
+	background: #e1ebf4;
+}

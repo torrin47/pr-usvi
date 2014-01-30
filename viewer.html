@@ -1,0 +1,333 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Puerto Rico - US Virgin Islands Change Detection Viewer </title>
+        <meta name="DC.description" content="The viewer of Puerto Rico - US Virgin Islands Change Detection"/>
+        <meta name="Keywords" content="landscape ecology, metric browser, geographic information systems, GIS, remote sensing" />
+<meta name="DC.creator" content="US EPA ORD, NERL, Environmental Sciences Programs" />
+    	<meta name="DC.title" content="Puerto Rico - US Virgin Islands Change Detection Viewer" />
+	<meta name="" />
+ <meta name="DC.Subject.epachannel" content="Science & Technology," />
+<meta name="DC.type" content="Data & Tools," />        
+		<link rel="stylesheet" type="text/css" href="http://serverapi.arcgisonline.com/jsapi/arcgis/2.5/js/dojo/dijit/themes/nihilo/nihilo.css">
+		<link rel="stylesheet" type="text/css" href="http://download.dojotoolkit.org/release-1.6.1/dojo-release-1.6.1/dojox/layout/tests/_expando.css">
+		<style type="text/css" media="screen">
+			@import 'http://www.epa.gov/epafiles/s/epa.css';
+		</style>
+		<link rel="stylesheet" type="text/css" href="layout.css">
+		<!--[if lt IE 7]>
+		<link rel="stylesheet" type="text/css" href="http://www.epa.gov/epafiles/s/ie.css" />
+		<![endif]-->
+		<!--<script type="text/javascript" src="http://www.epa.gov/epafiles/js/epa-core.js"></script>-->
+		<script type="text/javascript">
+			var djConfig = {
+				parseOnLoad : true,
+				baseUrl : './',
+				modulePaths : {
+					'agsjs' : 'agsjs/build/asjs'
+				}
+			};
+
+		</script>
+		<script type="text/javascript" src="http://serverapi.arcgisonline.com/jsapi/arcgis/?v=2.5"></script>
+		<script type="text/javascript" src="mapcode.js"></script>
+		<script type="text/javascript">
+			dojo.require("dijit.dijit");
+			// optimize: load dijit layer
+			dojo.require("dijit.layout.BorderContainer");
+			dojo.require("dijit.layout.ContentPane");
+			dojo.require("esri.toolbars.navigation");
+			dojo.require("dijit.form.Button");
+			dojo.require("dijit.Toolbar");
+			dojo.require("dijit.form.TextBox");
+			dojo.require("dijit.layout.LayoutContainer");
+			dojo.require("dojox.layout.ExpandoPane");
+			dojo.require("dijit.layout.TabContainer");
+			dojo.require("dijit.form.CheckBox");
+			dojo.require("dijit.form.ToggleButton");
+
+		</script>
+	</head>
+	<body class="nihilo">
+		<div id="mainWindow" dojotype="dijit.layout.BorderContainer" design="headline" gutters="false" style="width:100%; height:100%;">
+			<div id="header" dojotype="dijit.layout.ContentPane" region="top" >
+				<div id="logo">
+					<a href="http://www.epa.gov/" title="US EPA home page"><img src="http://www.epa.gov/epafiles/images/logo_epaseal.gif" alt="[logo] US EPA" width="100" height="110" /></a>
+				</div>
+				<div id="areaname">
+					<!-- START AREA NAME -->
+					<p>
+						Landscape Characterization
+					</p>
+				</div>
+				<!-- END AREA NAME -->
+				<!-- START SEARCH CONTROLS -->
+				<form id="EPAsearch" method="get" action="http://nlquery.epa.gov/epasearch/epasearch">
+					<!-- START AREA SPECIFIC LINKS AND SEARCH BOX  -->
+					<!-- CHANGE links to point to your own recent additions and contact pages -->
+					<!-- REMOVE recent additions link if your area doesn't have one -->
+					<p>
+						<a href="recentadditions.htm" target="_top">Recent Additions</a> | <a href="contact.htm" target="_top">Contact Us</a>
+						<span class="search"><strong>Search:</strong>
+							<input type="hidden" name="fld" value="" />
+							<input type="hidden" name="areaname" value="" />
+							<input type="hidden" name="" value="" />
+							<!-- AREA ADVANCED SEARCH URL HERE (OPTIONAL) -->
+							<input type="hidden" name="" value="" />
+							<!-- THE REMAINING HIDDEN INPUTS ARE USED BY THE SEARCH ENGINE - DO NOT EDIT -->
+							<input type="hidden" name="result_template" value="epafiles_default.xsl" />
+							<input type="hidden" name="filter" value="samplefilt.hts" />
+							<input name="typeofsearch" id="EPAall" type="radio" value="epa"/>
+							<label for="EPAall">All EPA</label>
+							<input name="typeofsearch" id="Areaall" type="radio" value="area" checked="checked" />
+							<label for="Areaall">This Area</label>
+							<input name="querytext" id="searchbox" value="" />
+							<input name="submit" id="searchbutton" type="submit" value="Go" />
+						</span>
+					</p>
+				</form>
+				<!-- END SEARCH CONTROLS -->
+				<ul>
+					<!-- BEGIN BREADCRUMBS -->
+					<li class="first">
+						You are here: <a href="http://www.epa.gov/" target="_top">EPA Home</a>
+					</li>
+					<!-- START AREA BREADCRUMBS -->
+					<!-- #BeginEditable "breadcrumbs" -->
+					<!-- START AREA BREADCRUMBS -->
+					<!-- START LINK TO AREA HOME PAGE -->
+					<li>
+						<a href="http://www.epa.gov/nerl/" target="_top">NERL</a>
+					</li>
+					<li>
+						<a href="http://www.epa.gov/nerlesd1/" target="_top">ESD</a>
+					</li>
+					<li>
+						<a href="http://www.epa.gov/nerlesd1/land-sci/default.htm" target="_top">LEB</a>
+					</li>
+					<li>
+						<a href="http://www.epa.gov/nerlesd1/land-sci/lcb/index.htm" target="_top">LCB</a>
+					</li>
+					<li>
+						<a href="viewer.html" target="_top">Puerto Rico - US Virgin Islands</a>
+						<!-- END LINK TO AREA HOME PAGE -->
+					</li>
+					<li>
+						Puerto Rico - US Virgin Islands Change Detection Viewer
+					</li>
+					<!-- END AREA BREADCRUMBS -->
+					<!-- #EndEditable -->
+					<!-- END AREA BREADCRUMBS -->
+				</ul>
+				<!-- END BREADCRUMBS -->
+			</div>
+			<div dojotype="dijit.layout.ContentPane" region="left" id="leftPane" >
+				<div data-dojo-type="dijit.form.Button" id="zoomin"  data-dojo-props="iconClass:'zoominIcon', onClick:function(){gVar.navToolbar.activate(esri.toolbars.Navigation.ZOOM_IN);}">
+					Zoom In
+				</div>
+				<div data-dojo-type="dijit.form.Button" id="zoomout" data-dojo-props="iconClass:'zoomoutIcon', onClick:function(){gVar.navToolbar.activate(esri.toolbars.Navigation.ZOOM_OUT);}">
+					Zoom Out
+				</div>
+				<div data-dojo-type="dijit.form.Button" id="zoomfullext" data-dojo-props="iconClass:'zoomfullextIcon', onClick:function(){gVar.navToolbar.zoomToFullExtent();}">
+					Full Extent
+				</div>
+				<div data-dojo-type="dijit.form.Button" id="zoomprev" data-dojo-props="iconClass:'zoomprevIcon', onClick:function(){gVar.navToolbar.zoomToPrevExtent();}">
+					Prev Extent
+				</div>
+				<div data-dojo-type="dijit.form.Button" id="zoomnext" data-dojo-props="iconClass:'zoomnextIcon', onClick:function(){gVar.navToolbar.zoomToNextExtent();}">
+					Next Extent
+				</div>
+				<div data-dojo-type="dijit.form.Button" id="pan" data-dojo-props="iconClass:'panIcon', onClick:function(){gVar.navToolbar.activate(esri.toolbars.Navigation.PAN);}">
+					Click and Drag
+				</div>
+				<div data-dojo-type="dijit.form.Button" id="deactivate" data-dojo-props="iconClass:'deactivateIcon' ,onClick:function(){gVar.navToolbar.deactivate();}">
+					Deactivate
+				</div>
+				<div data-dojo-type="dijit.form.Button" id="measureButton" data-dojo-props="iconClass:'measureIcon' ,onClick:function(){toggleMeasurement();}">
+					Measure
+				</div>
+				<div data-dojo-type="dijit.form.ToggleButton" id="chartButton" data-dojo-props="iconClass:'chartIcon' ,onClick:function(){this.attr('iconClass', this.checked ? 'chartIconOn' : 'chartIcon');toggleChart(this);}">
+					Profile Tool
+				</div>
+				<table style="position:relative; left:18px;">
+					<tr>
+						<td colspan='2'> Phenology </td>
+					</tr>
+					<tr>
+						<td><div data-dojo-type="dijit.form.CheckBox" id="phenologyRawCheck" data-dojo-props="onClick:function(){toggleCB('phenologyRaw');}"></div></td><td><img src="images/phenologyRaw.png"></img><label for="phenologyRawCheck">Raw</label></td>
+					</tr>
+					<tr>
+						<td><div data-dojo-type="dijit.form.CheckBox" id="phenologyCleanCheck" data-dojo-props="checked:true, onClick:function(){toggleCB('phenologyClean');}"></div></td><td><img src="images/phenologyClean.png"></img><label for="phenologyCleanCheck">Clean</label></td>
+					</tr>
+					<tr>
+						<td colspan='2'> Wetness </td>
+					</tr>
+					<tr>
+						<td><div data-dojo-type="dijit.form.CheckBox" id="wetnessRawCheck" data-dojo-props="onClick:function(){toggleCB('wetnessRaw');}"></div></td><td><img src="images/wetnessRaw.png"></img><label for="wetnessRawCheck">Raw</label></td>
+					</tr>
+					<tr>
+						<td><div data-dojo-type="dijit.form.CheckBox" id="wetnessCleanCheck" data-dojo-props="onClick:function(){toggleCB('wetnessClean');}"></div></td><td><img src="images/wetnessClean.png"></img><label for="wetnessCleanCheck">Clean</label></td>
+					</tr>
+				</table>
+				<hr/>
+				<div data-dojo-type="dijit.form.Button" id="zoomTo" data-dojo-props="onClick:function(){zoomTo();}">
+					Zoom To...
+				</div>
+				<table>
+					<tr>
+						<td style="text-align:right">Latitude:</td>
+						<td>
+						<input id="zoomLat" type="text" style="width: 66px;"/>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align:right">Longitude:</td>
+						<td>
+						<input id="zoomLong" type="text" style="width: 66px;"/>
+						</td>
+					</tr>
+				</table>
+				<hr/>
+				<table>
+					<tbody>
+						<tr>
+							<td><div data-dojo-type="dijit.form.Button" id="panNW" data-dojo-props="iconClass:'panNW' ,onClick:function(){gVar.map.panUpperLeft();}"></div></td>
+							<td><div data-dojo-type="dijit.form.Button" id="panNorth" data-dojo-props="iconClass:'panNorth' ,onClick:function(){gVar.map.panUp();}"></div></td>
+							<td><div data-dojo-type="dijit.form.Button" id="panNE" data-dojo-props="iconClass:'panNE' ,onClick:function(){gVar.map.panUpperRight();}"></div></td>
+						</tr>
+						<tr>
+							<td><div data-dojo-type="dijit.form.Button" id="panWest" data-dojo-props="iconClass:'panWest' ,onClick:function(){gVar.map.panLeft();}"></div></td>
+							<td>Pan</td>
+							<td><div data-dojo-type="dijit.form.Button" id="panEast" data-dojo-props="iconClass:'panEast' ,onClick:function(){gVar.map.panRight();}"></div></td>
+						</tr>
+						<tr>
+							<td><div data-dojo-type="dijit.form.Button" id="panSW" data-dojo-props="iconClass:'panSW' ,onClick:function(){gVar.map.panLowerLeft();}"></div></td>
+							<td><div data-dojo-type="dijit.form.Button" id="panSouth" data-dojo-props="iconClass:'panSouth' ,onClick:function(){gVar.map.panDown();}"></div></td>
+							<td><div data-dojo-type="dijit.form.Button" id="panSE" data-dojo-props="iconClass:'panSE' ,onClick:function(){gVar.map.panLowerRight();}"></div></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div dojoType="dijit.layout.LayoutContainer" style="width: 100%; height: 100%" region="center">
+				<div id="map" class="shadow" dojotype="dijit.layout.ContentPane" region="center" >
+					<div id="measureWindow" >
+						Measurement Tools <div id="measurementDiv"></div>
+					</div>
+					<div id="loadingWrap2" style="position: absolute; bottom: 50%; right: 50%; height: 50px; width: 100px; z-index:500;">
+						<div id="loadingCont2" style="position: relative; left: 50%; top: 50%; text-align:center">
+							<img id="loadingImg" src="images/bigrotation2.gif" />
+						</div>
+					</div>
+				</div>
+				<div id="graphPane" dojotype="dojox.layout.ExpandoPane" region="bottom" startExpanded="false" showTitle="true" title="Phenology">
+					<div id="Graph" style="width: 100%; height: 200px; margin: 5px auto 0px auto;"></div>
+				</div>
+			</div>
+			<div dojotype="dijit.layout.ContentPane" region="right" id="rightPane" splitter="true" minSize='300'>
+				<div dojoType="dijit.layout.TabContainer" id="rightTabs" style="width: 100%; height: 100%;" useMenu="false" useSlider="false">
+					<div dojoType="dijit.layout.ContentPane" title="Contents" selected="true">
+						<div id='tocDiv'></div>
+					</div>
+					<div dojoType="dijit.layout.ContentPane" title="Downloads" selected="true">
+						<h2>Change Detection Products</h2>
+						<ul>
+							<li>
+								<a href="http://gispub4.epa.gov/PR-USVI/downloads/LCChangeAlarm.zip">LC Change Alarm (2002–2009)</a>
+							</li>
+							<li>
+								<a href="http://gispub4.epa.gov/PR-USVI/downloads/biomass99.zip">Biomass Trajectories 99% CI (2001-2010)</a>
+							</li>
+						</ul>
+						<h2>Ancillary Data</h2>
+						<ul>
+							<li>
+								<a href="http://gispub4.epa.gov/PR-USVI/downloads/Cities.zip">Cities</a>
+							</li>
+							<li>
+								<a href="http://gispub4.epa.gov/PR-USVI/downloads/Roads.zip">Roads</a>
+							</li>
+							<li>
+								<a href="http://gispub4.epa.gov/PR-USVI/downloads/Hydro.zip">Hydro Stream Network</a>
+							</li>
+							<li>
+								<a href="http://gispub4.epa.gov/PR-USVI/downloads/SIRDemColor.zip">Shuttle Radar DEM (Color)</a>
+							</li>
+							<li>
+								<a href="http://gispub4.epa.gov/PR-USVI/downloads/HUC08.zip">Hydrologic Units (HUC-8)</a>
+							</li>
+							<li>
+								<a href="http://gispub4.epa.gov/PR-USVI/downloads/huc10.zip">Hydrologic Units (HUC-10)</a>
+							</li>
+							<li>
+								<a href="http://gispub4.epa.gov/PR-USVI/downloads/HUC12.zip">Hydrologic Units (HUC-12)</a>
+							</li>
+							<li>
+								<a href="http://gispub4.epa.gov/PR-USVI/downloads/huc14.zip">Hydrologic Units (HUC-14)</a>
+							</li>
+							<li>
+								<a href="http://gispub4.epa.gov/PR-USVI/downloads/Municipalities.zip">Puerto Rico Municipalities (2004)</a>
+							</li>
+							<li>
+								<a href="http://gispub4.epa.gov/PR-USVI/downloads/NWI_wetland.zip">NWI Wetlands (1999)</a>
+							</li>
+							<li>
+								<a href="http://gispub4.epa.gov/PR-USVI/downloads/GAP_Ag.zip">GAP-LC JPR (1999-2003) Agricultural Land</a>
+							</li>
+							<li>
+								<a href="http://gispub4.epa.gov/PR-USVI/downloads/GAP_Wetlands.zip">GAP-LC JPR (1999-2003) Wetlands</a>
+							</li>
+							<li>
+								<a href="http://gispub4.epa.gov/PR-USVI/downloads/CCAP_Ag.zip">C-CAP USVI (2007) Agricultural Land</a>
+							</li>
+							<li>
+								<a href="http://gispub4.epa.gov/PR-USVI/downloads/historic_lc.zip">Historical Land-Cover (1977)</a>
+							</li>
+							<li>
+								<a href="http://gispub4.epa.gov/PR-USVI/downloads/historic_ag.zip">Historical Agricultural (1977)</a>
+							</li>
+							<li>
+								<a href="http://gispub4.epa.gov/PR-USVI/downloads/CCAP_Wetlands.zip">C-CAP USVI (2007) Wetlands</a>
+							</li>
+							<li>
+								<a href="http://gispub4.epa.gov/PR-USVI/downloads/NLCDImpervious.zip">NLCD Impervious(2001)</a>
+							</li>
+							<li>
+								<a href="http://gispub4.epa.gov/PR-USVI/downloads/NLCDTreeCanopy.zip">NLCD Tree Canopy (2001)</a>
+							</li>
+							<li>
+								<a href="http://gispub4.epa.gov/PR-USVI/downloads/Mangroves.zip">NOAA Mangroves (1999)</a>
+							</li>
+							<li>
+								<a href="http://gispub4.epa.gov/PR-USVI/downloads/Benthic.zip">NOAA Benthic Habitats (1999)</a>
+							</li>
+							<li>
+								<a href="http://gispub4.epa.gov/PR-USVI/downloads/PhenologyQuality.zip">Phenology Data Quality</a>
+							</li>
+							<li>
+								<a href="http://gispub4.epa.gov/PR-USVI/downloads/WetnessQuality.zip">Wetness Data Quality</a>
+							</li>
+							<li>
+								<a href="http://gispub4.epa.gov/PR-USVI/downloads/biomass2000.zip">Quantitative Biomass (2000)</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div id="footer" dojotype="dijit.layout.ContentPane" region="bottom" >
+				<table width=100%>
+					<tr>
+						<td width="70%" style="text-align: center;"><a href="http://www.epa.gov/ord/index.htm" target="_top">ORD
+						Home</a> |<a href="http://www.epa.gov/nerl/" target="_top"> NERL Home</a> | <a href="http://www.epa.gov/nerlesd1/" target="_top">ESD
+						Home</a> | <a href="http://www.epa.gov/nerlesd1/land-sci/lcb/nrb/VFRDB/index.htm" target="_top">VFRDB Home</a> | <a href="index.htm" target="_top">PR-USVI Home</a>
+						<br/>
+						Send questions or comments to <a href="mailto:lunetta.ross@epa.gov">Ross Lunetta</a> or <a href="../../../contact.htm" target="_top">Contact Us</a></td>
+						<td style="text-align: center;">
+						<input type="button" value="Reset Map" onClick="location.href='viewer.html';">
+						</input></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>

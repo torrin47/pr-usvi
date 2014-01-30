@@ -1,0 +1,9 @@
+AuthType Basic
+AuthName "Secure"
+AuthUserFile /public/data/nerlesd1/protect/lcbprotect
+Require user PRUSVI
+Order deny,allow
+Deny from all
+<Limit GET HEAD POST>
+Allow from all
+</Limit>
